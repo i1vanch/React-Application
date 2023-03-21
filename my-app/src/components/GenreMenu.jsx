@@ -1,4 +1,4 @@
-
+import * as SC from './styles/MainCenterblockStyled';
 
 const arrGenre = [];
 
@@ -22,13 +22,13 @@ request2();
 
 function GenreMenu() {
     const listGenre = window.uniqueGenre.map((genre) =>
-    <li className="l" key={genre.toString()}>
+    <SC.L key={genre.toString()}>
       {genre}
-    </li>
+    </SC.L>
   );
     
   return (
-    <ul className="list">{listGenre}</ul>
+    <SC.List>{listGenre}</SC.List>
   );
 }
 

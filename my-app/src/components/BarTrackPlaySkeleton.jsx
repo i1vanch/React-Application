@@ -1,34 +1,39 @@
 import Skeleton from 'react-loading-skeleton'
+import * as S from './styles/BarTrackPlayStyled';
+
 
 function BarTrackPlaySkeleton() {
     return(
-        <div className="track-play__contain">
-            <div className="track-play__image">
+       
+        <S.TPContain>
+            <S.Image>
                 <div  
                 style={{
                     display: 'block',
                 }}>
                     <Skeleton width={51} height={51} />
                 </div>
-                </div>
-            <div className="track-play__author">
+            </S.Image>
+
+            <S.Author>
                 <div  
                 style={{
                     display: 'block',
                 }}>
                     <Skeleton width={59} height={15} />
                 </div>
-            </div>
-            <div className="track-play__album">
+            </S.Author>
+
+            <S.Album>
                 <div  
                 style={{
                     display: 'block',
                 }}>
                     <Skeleton width={59} height={15} />
                 </div>
-            </div>
-        </div>
-);
+            </S.Album>
+        </S.TPContain>
+    );
 };
 
 export default BarTrackPlaySkeleton

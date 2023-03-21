@@ -1,3 +1,4 @@
+import * as SC from './styles/MainCenterblockStyled';
 
 
 const arrAuthor = [];
@@ -20,16 +21,16 @@ const request = new XMLHttpRequest();
 request1();
 
 function AuthorMenu() {
-    const listAuthor = arrAuthor.map((author) =>
-    <li className="l" key={author.toString()}>
+  const listAuthor = arrAuthor.map((author) =>
+    <SC.L key={author.toString()}>
       {author}
-    </li>
+    </SC.L>
   );
-    
   
 
+
   return (
-    <ul className="list">{listAuthor}</ul>
+    <SC.List>{listAuthor}</SC.List>
   );
 }
 

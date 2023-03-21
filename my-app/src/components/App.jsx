@@ -1,13 +1,19 @@
+import GlobalStyles from './styles/GlobalStyles';
+import Main from './Main';
+import Bar from './Bar';
 
-import '../App.css';
-import Container from './Container';
+
 
 function App() {
   return (
     <div className='wrapper'>
-      <Container />
+      <GlobalStyles/>
+      <div className='container'>
+        <Main />
+        <Bar />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

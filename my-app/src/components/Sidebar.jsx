@@ -3,6 +3,7 @@ import  { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 import SidebarSkeleton from './SidebarSkeleton';
+import * as S from './styles/MainSidebarStyled'
 
 import Playlist01 from '../img/playlist01.png';
 import Playlist02 from '../img/playlist02.png';
@@ -33,33 +34,29 @@ function Sidebar() {
     };
 
     return(
-        <div className="main__sidebar sidebar">
 
-            <div className="sidebar__personal">
-                <p className="sidebar__personal-name">Sergey.Ivanov</p>
-                <div className="sidebar__avatar"/>
-            </div>
+        <S.MainSidebar>
+            <S.Personal>
+                <S.PersonalName>Sergey.Ivanov</S.PersonalName>
+                <S.Avatar/>
+            </S.Personal>
+            <S.Block>
+                <S.List>
+                    <S.Item>
+                        <S.Link href="#t">
+                            <S.Img src={ Playlist01} alt="day's playlist"/>
+                        </S.Link>
+                        <S.Link href="#t">
+                            <S.Img src={ Playlist02} alt="day's playlist"/>
+                        </S.Link>
+                        <S.Link href="#t">
+                            <S.Img src={ Playlist03} alt="day's playlist"/>
+                        </S.Link>
+                    </S.Item>
+                </S.List>
+            </S.Block>
+        </S.MainSidebar>
 
-            <div className="sidebar__block">
-                <div className="sidebar__list">
-                    <div className="sidebar__item">
-                        <a className="sidebar__link" href="#t">
-                            <img className="sidebar__img" src={ Playlist01} alt="day's playlist" /> 
-                        </a>
-                    </div>
-                    <div className="sidebar__item">
-                        <a className="sidebar__link" href="#t">
-                            <img className="sidebar__img" src={Playlist02} alt="day's playlist"/>
-                        </a>
-                    </div>
-                    <div className="sidebar__item">
-                        <a className="sidebar__link" href="#t">
-                            <img className="sidebar__img" src={Playlist03} alt="day's playlist"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     );
         
 };
