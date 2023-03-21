@@ -5,6 +5,8 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import BarTrackPlaySkeleton from './BarTrackPlaySkeleton';
 import Melody from '../img/melody.svg';
 
+import * as S from './styles/BarTrackPlayStyled';
+
 
 function BarTrackPlay() {
     const [isLoading, setLoading] = React.useState(true)
@@ -25,20 +27,22 @@ function BarTrackPlay() {
     };
 
     return(
-        <div className="track-play__contain">
-            <div className="track-play__image">
-                <div className="track-play__svg" >
+        <S.TPContain>
+            <S.Image>
+                <S.Svg>
                     <img src={Melody} alt="melody" />
-                </div>
-            </div>
-            <div className="track-play__author">
-                <a className="track-play__author-link" href="http://">Ты та...</a>
-            </div>
-            <div className="track-play__album">
-                <a className="track-play__album-link" href="http://">Баста</a>
-            </div>
-        </div>
-    )
+                </S.Svg>
+            </S.Image>
+
+            <S.Author>
+                <S.AuthorLink href="http://">Ты та...</S.AuthorLink>
+            </S.Author>
+
+            <S.Album>
+                <S.AlbumLink href="http://">Баста</S.AlbumLink>
+            </S.Album>
+        </S.TPContain>
+    );
 };
 
 export default BarTrackPlay
