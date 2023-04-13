@@ -1,4 +1,4 @@
-import * as S from './styles/ContentPlaylistStyled';
+import * as S from './ContentPlaylistStyled';
 import Melody from '../img/melody.svg';
 import Like from '../img/like.svg';
 

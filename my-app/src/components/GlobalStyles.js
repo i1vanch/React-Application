@@ -90,6 +90,62 @@ body {
   stroke: #FFFFFF;
   cursor: pointer;
 }
+
+.btn_log{
+  width: 278px;
+  height: 52px;
+  background: #580EA2;
+  border: none;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  &:hover{
+    background: #3F007D;
+  }
+
+  &:active{
+    background: #271A58;
+  }
+}
+
+.btn_sign{
+  width: 278px;
+  height: 52px;
+  border: 1px solid #D0CECE;
+  border-radius: 6px;
+  background: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  &:hover{
+    background: #F4F5F6;
+  }
+
+  &:active{
+    background: #D9D9D9;
+  }
+}
+
+
 `;
+
+
 
 export default GlobalStyles

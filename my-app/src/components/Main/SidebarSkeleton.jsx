@@ -1,5 +1,5 @@
 import Skeleton from 'react-loading-skeleton'
-import * as S from './styles/MainSidebarStyled'
+import * as S from './MainSidebarStyled'
 
 
 function SidebarSkeleton() {

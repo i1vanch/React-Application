@@ -3,7 +3,7 @@ import  { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 import SidebarSkeleton from './SidebarSkeleton';
-import * as S from './styles/MainSidebarStyled'
+import * as S from './MainSidebarStyled'
 
 import Playlist01 from '../img/playlist01.png';
 import Playlist02 from '../img/playlist02.png';

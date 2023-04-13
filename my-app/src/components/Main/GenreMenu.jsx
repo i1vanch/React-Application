@@ -1,4 +1,4 @@
-import * as SC from './styles/MainCenterblockStyled';
+import * as SC from './MainCenterblockStyled';
 
 const arrGenre = [];
 

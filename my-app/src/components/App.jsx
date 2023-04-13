@@ -1,17 +1,11 @@
-import GlobalStyles from './styles/GlobalStyles';
-import Main from './Main';
-import Bar from './Bar';
-
-
+import GlobalStyles from './GlobalStyles';
+import AppRoutes from '../routes';
 
 function App() {
   return (
-    <div className='wrapper'>
+    <div>
       <GlobalStyles/>
-      <div className='container'>
-        <Main />
-        <Bar />
-      </div>
+      <AppRoutes />
     </div>
   );
 };

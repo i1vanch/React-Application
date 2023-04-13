@@ -6,10 +6,13 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.1",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "^5.0.1",
+    "save-dev": "^0.0.1-security",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
@@ -38,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.32.0",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
