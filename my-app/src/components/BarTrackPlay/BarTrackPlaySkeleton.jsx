@@ -1,5 +1,5 @@
 import Skeleton from 'react-loading-skeleton'
-import * as S from './styles/BarTrackPlayStyled';
+import * as S from './BarTrackPlayStyled';
 
 
 function BarTrackPlaySkeleton() {

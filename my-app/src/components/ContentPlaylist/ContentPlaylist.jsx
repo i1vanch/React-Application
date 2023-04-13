@@ -6,7 +6,7 @@ import Item from './PlaylistItem';
 
 import PlaylistSkeleton from './PlaylistSkeleton';
 
-import * as B from './styles/ContentPlaylistStyled';
+import * as B from './ContentPlaylistStyled';
 
 
 

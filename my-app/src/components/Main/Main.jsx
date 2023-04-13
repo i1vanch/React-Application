@@ -9,9 +9,9 @@ import ReactLogo from '../img/logo.png';
 import Sidebar from './Sidebar';
 import AuthorMenu from './AuthorMenu';
 import GenreMenu from './GenreMenu';
-import ContentPlaylist from './ContentPlaylist';
-import * as SM from './styles/MainNavStyled';
-import * as SC from './styles/MainCenterblockStyled'
+import ContentPlaylist from '../ContentPlaylist/ContentPlaylist';
+import * as SM from './MainNavStyled';
+import * as SC from './MainCenterblockStyled'
 
 const StyledMain = styled.div`
     flex: 1 1 auto;

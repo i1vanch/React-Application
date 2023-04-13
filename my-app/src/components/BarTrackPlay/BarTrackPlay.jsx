@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import BarTrackPlaySkeleton from './BarTrackPlaySkeleton';
 import Melody from '../img/melody.svg';
 
-import * as S from './styles/BarTrackPlayStyled';
+import * as S from './BarTrackPlayStyled';
 
 
 function BarTrackPlay() {

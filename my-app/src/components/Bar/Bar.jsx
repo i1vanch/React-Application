@@ -6,8 +6,8 @@ import Shuffle from '../img/shuffle.svg';
 import Like from '../img/like.svg';
 import Dislike from '../img/dislike.svg';
 import Volume from '../img/volume.svg';
-import BarTrackPlay from './BarTrackPlay';
-import * as S from './styles/BarStyled';
+import BarTrackPlay from '../BarTrackPlay/BarTrackPlay';
+import * as S from './BarStyled';
 
 
 
