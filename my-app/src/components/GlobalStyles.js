@@ -143,9 +143,24 @@ body {
   }
 }
 
+.menu_link{
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sidebar_img_links{
+  width: 100%;
+  height: 100%;
+}
+
+.centerblock_nf{
+  background-color: rgb(24, 24, 24);
+  height: 89vh;
+
+}
 
 `;
-
-
 
 export default GlobalStyles

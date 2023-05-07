@@ -26,7 +26,7 @@ function LogIn() {
             alert('Неверно введены данные');
         };
 
-        navigate('/main');
+        navigate('/');
     };
     
     return(

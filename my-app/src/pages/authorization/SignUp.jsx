@@ -11,7 +11,7 @@ function SignUp() {
                 <S.FInput type='password' placeholder='Пароль'/>
                 <S.FInput type='password' placeholder='Повторите пароль'/>
 
-                <NavLink className='btn_sign' to='/'>Зарегистрироваться</NavLink>
+                <NavLink className='btn_sign' to='/login'>Зарегистрироваться</NavLink>
             </S.Form>
         </S.AuthBox>
     );

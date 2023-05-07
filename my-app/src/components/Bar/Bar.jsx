@@ -9,17 +9,10 @@ import Volume from '../img/volume.svg';
 import BarTrackPlay from '../BarTrackPlay/BarTrackPlay';
 import * as S from './BarStyled';
 
-
-
-
-
-
-
 function Bar() {
     return(
-
         <S.Bar>
-            <S.Content>
+            <S.Content style={{background: '#181818'}}>
 
                 <S.PlayerProgress/>
 
