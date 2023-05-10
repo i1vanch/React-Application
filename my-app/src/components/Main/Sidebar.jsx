@@ -1,16 +1,12 @@
 import React from 'react';
 import  { SkeletonTheme } from 'react-loading-skeleton';
+import { NavLink } from 'react-router-dom';
 import 'react-loading-skeleton/dist/skeleton.css'
-
 import SidebarSkeleton from './SidebarSkeleton';
 import * as S from './MainSidebarStyled'
-
 import Playlist01 from '../img/playlist01.png';
 import Playlist02 from '../img/playlist02.png';
 import Playlist03 from '../img/playlist03.png';
-
-
-
 
 function Sidebar() {
     const [isLoading, setLoading] = React.useState(true)
@@ -26,15 +22,11 @@ function Sidebar() {
         return (
             <SkeletonTheme baseColor="#313131" highlightColor="#444">
                 <SidebarSkeleton />
-                {/* <p>
-                    <Skeleton count={0} />
-                </p> */}
             </SkeletonTheme>
         );
     };
 
     return(
-
         <S.MainSidebar>
             <S.Personal>
                 <S.PersonalName>Sergey.Ivanov</S.PersonalName>
@@ -43,22 +35,14 @@ function Sidebar() {
             <S.Block>
                 <S.List>
                     <S.Item>
-                        <S.Link href="#t">
-                            <S.Img src={ Playlist01} alt="day's playlist"/>
-                        </S.Link>
-                        <S.Link href="#t">
-                            <S.Img src={ Playlist02} alt="day's playlist"/>
-                        </S.Link>
-                        <S.Link href="#t">
-                            <S.Img src={ Playlist03} alt="day's playlist"/>
-                        </S.Link>
+                        <NavLink className='sidebar_img_links' to="/playlistDay"><S.Img src={Playlist01} alt="day's playlist"/></NavLink>
+                        <NavLink className='sidebar_img_links' to="/hits"><S.Img src={Playlist02} alt="day's playlist"/></NavLink>
+                        <NavLink className='sidebar_img_links' to="/indie"><S.Img src={Playlist03} alt="day's playlist"/></NavLink>
                     </S.Item>
                 </S.List>
             </S.Block>
         </S.MainSidebar>
-
-    );
-        
+    );     
 };
 
 export default Sidebar;

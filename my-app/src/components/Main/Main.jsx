@@ -1,8 +1,6 @@
 import { useState } from 'react';
-
 import styled from 'styled-components';
-
-
+import { NavLink } from 'react-router-dom';
 import search from '../img/search.svg';
 import clock from '../img/clock.svg';
 import ReactLogo from '../img/logo.png';
@@ -16,11 +14,9 @@ import * as SC from './MainCenterblockStyled'
 const StyledMain = styled.div`
     flex: 1 1 auto;
     display: flex;
-
     flex-wrap: wrap;
     justify-content: space-between;
 `;
-
 
 function Main() {
     const [visible, setVisible] = useState(true);
@@ -56,8 +52,8 @@ function Main() {
         }else{
             setColorBorderAuthor(' ');
             setColorTextAuthor(' ');   
-        }  
-    }
+        };
+    };
     
     const clickGenderListener = () => {
         setGenderMenu(!genderMenu);
@@ -75,7 +71,7 @@ function Main() {
         }else{
             setColorBorderGender(' ');
             setColorTextGender(' '); 
-        } 
+        };
     };
 
     const clickAwayListenerGenre = () => {
@@ -95,7 +91,7 @@ function Main() {
             setColorBorderGenre(' ');
             setColorTextGenre(' ');
             
-        }
+        };
         
     };
 
@@ -124,9 +120,9 @@ function Main() {
                 {!visible && (
                     <SM.NavMenu>
                         <SM.MenuList>
-                            <SM.MenuItem><SM.MenuLink href="http://">Главное</SM.MenuLink></SM.MenuItem>
-                            <SM.MenuItem><SM.MenuLink href="http://">Мой плейлист</SM.MenuLink></SM.MenuItem>
-                            <SM.MenuItem><SM.MenuLink href="http://">Войти</SM.MenuLink></SM.MenuItem>
+                            <SM.MenuItem><NavLink className='menu_link' to="/">Главное</NavLink></SM.MenuItem>
+                            <SM.MenuItem><NavLink className='menu_link' to="/myTracks">Мой плейлист</NavLink></SM.MenuItem>
+                            <SM.MenuItem><NavLink className='menu_link' to="/login">Войти</NavLink></SM.MenuItem>
                         </SM.MenuList>
                     </SM.NavMenu>
                 )}
@@ -200,12 +196,8 @@ function Main() {
             
             < Sidebar />
         </StyledMain>
-    
     );
     
 };
-
-
-
 
 export default Main;
