@@ -21,12 +21,13 @@ function LogIn() {
         console.log(password);
 
         if (text === '123' && password === '123') {
-            Cookies.set('token', 'valToken')
+            Cookies.set('token', 'valToken');
+            
         }else{
             alert('Неверно введены данные');
         };
 
-        navigate('/');
+        navigate('/main', {replace: true}); 
     };
     
     return(

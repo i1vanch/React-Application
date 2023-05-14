@@ -35,7 +35,6 @@ function Main() {
     const [colorBorderGenre, setColorBorderGenre] = useState();
     const [colorTextGenre, setColorTextGenre] = useState();
 
-
     const clickAwayListener = () => {
         setMenu(!authorMenu);
         setGenderMenu(true);
@@ -120,7 +119,7 @@ function Main() {
                 {!visible && (
                     <SM.NavMenu>
                         <SM.MenuList>
-                            <SM.MenuItem><NavLink className='menu_link' to="/">Главное</NavLink></SM.MenuItem>
+                            <SM.MenuItem><NavLink className='menu_link' to="/main">Главное</NavLink></SM.MenuItem>
                             <SM.MenuItem><NavLink className='menu_link' to="/myTracks">Мой плейлист</NavLink></SM.MenuItem>
                             <SM.MenuItem><NavLink className='menu_link' to="/login">Войти</NavLink></SM.MenuItem>
                         </SM.MenuList>
