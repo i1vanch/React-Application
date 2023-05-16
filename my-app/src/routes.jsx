@@ -19,7 +19,7 @@ function AppRoutes() {
             <Route path='/playlistDay' element={<ProtectedRoute><PlaylistOfTheDay/></ProtectedRoute>}/>
             <Route path='/myTracks' element={<ProtectedRoute><MyTracks/></ProtectedRoute>}/>
             <Route path='/indie' element={<ProtectedRoute><IndieCharge/></ProtectedRoute>}/>
-
+            
             <Route path='*' element={<NotFound />} /> 
         </Routes>
     )

@@ -1,5 +1,7 @@
+import { useState, useEffect, useRef } from 'react';
 import Prev from '../img/left.svg';
 import Play from '../img/play.svg';
+import Pause from '../img/pause.svg'
 import Next from '../img/right.svg';
 import Repeat from '../img/repeat.svg';
 import Shuffle from '../img/shuffle.svg';
@@ -8,8 +10,45 @@ import Dislike from '../img/dislike.svg';
 import Volume from '../img/volume.svg';
 import BarTrackPlay from '../BarTrackPlay/BarTrackPlay';
 import * as S from './BarStyled';
+import Src from '../../music/Bobby_Marleni_-_Dropin.mp3';
 
 function Bar() {
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef(null);
+    const audio = audioRef.current;
+    console.log(audio);
+
+    useEffect(() => {
+        
+        audio.addEventListener('ended', () => setIsPlaying(false));
+    
+        return () => {
+          audio.removeEventListener('ended', () => setIsPlaying(false));
+        };
+    }, []);
+
+    function TogglePlay() {
+        setIsPlaying(!isPlaying);
+        // const audio = audioRef.current;
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play();
+        };
+    };
+
+    let music;
+
+    function ButtonIcon() {
+        if (isPlaying) {
+            music = <img src={Play} alt='Play Icon' />
+        }else{
+            music = <img src={Pause} alt='Pause Icon' />
+        }
+        return music ;
+    }
+
     return(
         <S.Bar>
             <S.Content style={{background: '#181818'}}>
@@ -19,17 +58,20 @@ function Bar() {
                 <S.PlayerBlock>
                     <S.Player>
                         <S.PlayerControls>
-
                             <S.PlayerBtnPrev>
                                 <S.BtnPrevSvg>
-                                    <img src={ Prev} alt="prev" />
+                                    <img src={Prev} alt="prev" />
                                 </S.BtnPrevSvg>
                             </S.PlayerBtnPrev>
 
                             <S.PlayerBtnPlay>
-                                <S.BtnPlaySvg>
-                                    <img src={ Play} alt="play" />
+                                <audio  ref={audioRef} src={Src}><track kind="captions"/></audio>
+
+                                <S.BtnPlaySvg type='button' onClick={TogglePlay()}>
+                                    {ButtonIcon()};
                                 </S.BtnPlaySvg>
+                                
+                                {/* <audio  ref={audioRef} src={Src}><track kind="captions"/></audio> */}
                             </S.PlayerBtnPlay>
 
                             <S.PlayerBtnNext>
