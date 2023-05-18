@@ -18,7 +18,7 @@ export const Content = styled.div`
             flex-direction: column;
 `;
 
-export const PlayerProgress = styled.div`
+export const PlayerProgress = styled.input`
     width: 100%;
     height: 5px;
     background: #2E2E2E;
