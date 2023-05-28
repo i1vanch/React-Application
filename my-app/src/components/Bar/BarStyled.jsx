@@ -22,6 +22,18 @@ export const PlayerProgress = styled.input`
     width: 100%;
     height: 5px;
     background: #2E2E2E;
+
+    // &::-webkit-slider-runnable-track{
+    //     background-color: #9A48F1;
+    //     height: 5px;
+    // }
+
+    // &::-webkit-slider-thumb{
+    //     width: 0;
+    //     height: 0;
+    //     border: none;
+    //     background: transparent;
+    // }
 `;
 
 export const PlayerBlock = styled.div`

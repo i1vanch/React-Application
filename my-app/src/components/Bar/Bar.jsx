@@ -15,7 +15,7 @@ import * as S from './BarStyled';
 
 
 function Bar() {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const audioRef = useRef(null);
 
     const [currentTime, setCurrentTime] = useState(0);
@@ -61,17 +61,11 @@ function Bar() {
         }
     }, [currentTime, duration]);
 
-
-
-
-
-
-
     return(
         <S.Bar>
             <S.Content style={{background: '#181818'}}>
 
-                <S.PlayerProgress type='range' defaultValue={0} max={1000} value={currentTime} onChange={handleSeek()} aria-valuenow={progressBarWidth}/>
+                <S.PlayerProgress type='range' defaultValue={currentTime} max={duration} value={currentTime} onChange={(e) => handleSeek(e)} aria-valuenow={progressBarWidth}/>
 
                 <S.PlayerBlock>
                     <S.Player>
