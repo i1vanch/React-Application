@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from 'react';
+
 import Prev from '../img/left.svg';
 import Play from '../img/play.svg';
 import Next from '../img/right.svg';
@@ -7,14 +9,63 @@ import Like from '../img/like.svg';
 import Dislike from '../img/dislike.svg';
 import Volume from '../img/volume.svg';
 import BarTrackPlay from '../BarTrackPlay/BarTrackPlay';
+import Pause from '../img/pause.svg';
+import Src from '../../music/Bobby_Marleni_-_Dropin.mp3';
 import * as S from './BarStyled';
 
+
 function Bar() {
+    const [isPlaying, setIsPlaying] = useState(true);
+    const audioRef = useRef(null);
+
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [progressBarWidth, setProgressBarWidth] = useState(0);
+
+
+    useEffect(() => {
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+    }, [isPlaying]);
+
+    let music;
+
+    function ButtonIcon() {
+        if (isPlaying) {
+            music = <img src={Play} alt='Play Icon' />
+        }else{
+            music = <img src={Pause} alt='Pause Icon' />
+        }
+        return music ;
+    }
+
+
+    function handleTimeUpdate() {
+        setCurrentTime(audioRef.current.currentTime);
+    }
+
+    function handleLoadedData() {
+        setDuration(audioRef.current.duration);
+    }
+    
+    function handleSeek(e) {
+        audioRef.current.currentTime = e.target.value;
+    }
+    
+    useEffect(() => {
+        if (duration) {
+            setProgressBarWidth((currentTime / duration) * 1000);
+        }
+    }, [currentTime, duration]);
+
     return(
         <S.Bar>
             <S.Content style={{background: '#181818'}}>
 
-                <S.PlayerProgress/>
+                <S.PlayerProgress type='range' defaultValue={currentTime} max={duration} value={currentTime} onChange={(e) => handleSeek(e)} aria-valuenow={progressBarWidth}/>
 
                 <S.PlayerBlock>
                     <S.Player>
@@ -27,9 +78,12 @@ function Bar() {
                             </S.PlayerBtnPrev>
 
                             <S.PlayerBtnPlay>
-                                <S.BtnPlaySvg>
-                                    <img src={ Play} alt="play" />
+                                <audio  ref={audioRef} src={Src} onTimeUpdate={handleTimeUpdate} onLoadedData={handleLoadedData}><track kind="captions"/></audio>
+
+                                <S.BtnPlaySvg type='button' onClick={() => setIsPlaying(!isPlaying)}>
+                                    {ButtonIcon()};
                                 </S.BtnPlaySvg>
+                                    
                             </S.PlayerBtnPlay>
 
                             <S.PlayerBtnNext>
